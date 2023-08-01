@@ -8,7 +8,7 @@ import { auth } from "../../firebase";
 const Home = () => {
   const { currentUser } = React.useContext(AuthContext);
   console.log(currentUser)
-  if (currentUser === undefined) return 
+  if (currentUser === undefined) return <div>Loading...</div>
   if (!currentUser) return <Navigate to="/login" replace />;
   return (
     <div>
