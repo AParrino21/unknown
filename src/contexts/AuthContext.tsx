@@ -2,20 +2,7 @@ import React from "react";
 import { auth } from "../firebase";
 import axios from "axios";
 
-interface AuthProviderProps {
-  currentUser: boolean;
-  login: (email: string, password: string) => void;
-  logout: () => void;
-  alertMessage: string;
-  alertStatus: string;
-  setAlert: (aStatus: string, aMessage: string) => void;
-  openAlert: boolean;
-  setOpenAlert: (open: boolean) => void;
-}
-
-interface childrenProps {
-  children: React.ReactNode;
-}
+import { AuthProviderProps, childrenProps } from "../types";
 
 export const AuthContext = React.createContext({} as AuthProviderProps);
 

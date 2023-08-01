@@ -1,13 +1,7 @@
 import { Snackbar, SnackbarContent } from "@mui/material";
 import React from "react";
 import "./Alert.css";
-
-interface AlertProps {
-  openAlert: boolean;
-  setOpenAlert: (open: boolean) => void;
-  alertMessage: string;
-  alertStatus: string;
-}
+import { AlertProps } from "../../types";
 
 const Alert: React.FC<AlertProps> = ({
   openAlert,

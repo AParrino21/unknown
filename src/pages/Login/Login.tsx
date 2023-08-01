@@ -14,7 +14,7 @@ const Login = () => {
 
   React.useEffect(() => {
     if (currentUser) {
-      navigate("/");
+      navigate("/profile");
     }
   }, [currentUser]);
 

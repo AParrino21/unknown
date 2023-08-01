@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import NaviBar from "./components/Navibar/NaviBar";
 import Alert from "./components/Alert/Alert";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   const { openAlert, setOpenAlert, alertMessage, alertStatus } =
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Routes>
       </Router>

@@ -1,20 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { List, ListItem } from "@mui/material";
+import { List, ListItem, TextField } from "@mui/material";
 import { AuthContext } from "../../contexts/AuthContext";
 import "./NaviBar.css";
+
+import HomeIcon from "@mui/icons-material/Home";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const NaviBar = () => {
   const { logout, currentUser } = React.useContext(AuthContext);
 
   return (
-    <div className="test">
+    <div>
       <List className="navi-container">
-        {/* <ListItem className="linksContainer">
+        {currentUser && (
+          <ListItem className="linksContainer">
+            <TextField label="Search Feed" />
+          </ListItem>
+        )}
+        <ListItem className="linksContainer">
           <Link className="links" to={"/"}>
-            Home
+            <HomeIcon className="navi-icon" />
           </Link>
-        </ListItem> */}
+        </ListItem>
+        {currentUser && (
+          <ListItem className="linksContainer">
+            <Link className="links" to={"/profile"}>
+              <AccountCircleIcon className="navi-icon" />
+            </Link>
+          </ListItem>
+        )}
         {!currentUser ? (
           <ListItem className="linksContainer">
             <Link className="links" to={"/login"}>

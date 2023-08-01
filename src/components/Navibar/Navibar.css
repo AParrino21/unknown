@@ -9,4 +9,8 @@
 }
 .links {
   text-decoration: none !important;
+  color: black;
+}
+.navi-icon {
+  color: black;
 }
