@@ -21,16 +21,18 @@ export const AuthProvider = ({ children }: childrenProps) => {
   }
 
   function login(email: string, password: string) {
-    return auth
-      .signInWithEmailAndPassword(email, password)
-      .catch((error) => {
-        console.log(error.message);
-        setAlert("failed", "Wrong Email or Password ");
-      });
+    return auth.signInWithEmailAndPassword(email, password).catch((error) => {
+      console.log(error.message);
+      setAlert("failed", "Wrong Email or Password ");
+    });
   }
 
   function logout() {
     return auth.signOut();
+  }
+
+  function handleSearch() {
+    console.log("searching");
   }
 
   React.useEffect(() => {
@@ -51,6 +53,7 @@ export const AuthProvider = ({ children }: childrenProps) => {
         setAlert,
         openAlert,
         setOpenAlert,
+        handleSearch,
       }}
     >
       {children}

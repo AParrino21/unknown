@@ -1,11 +1,27 @@
+.navi-root {
+  background-color: rgb(249, 249, 249);
+  padding: 10px;
+}
 .navi-container {
   display: flex !important;
   justify-content: right !important;
   align-items: center !important;
-  padding: 30px !important;
+}
+.navi-container-logged-in {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.navi-container-logged-in > li > .MuiFormControl-root {
+  background-color: white;
 }
 .linksContainer {
   width: auto !important;
+}
+.linksContainer-logged-in {
+  width: auto !important;
+  display: flex;
+  gap: 20px;
 }
 .links {
   text-decoration: none !important;
@@ -13,4 +29,11 @@
 }
 .navi-icon {
   color: black;
+}
+.logo {
+  width: 30px;
+}
+.search-icon {
+  font-size: 30px !important;
+  cursor: pointer;
 }

@@ -7,6 +7,7 @@ export interface AuthProviderProps {
     setAlert: (aStatus: string, aMessage: string) => void;
     openAlert: boolean;
     setOpenAlert: (open: boolean) => void;
+    handleSearch: () => void;
   }
 
 export interface childrenProps {
