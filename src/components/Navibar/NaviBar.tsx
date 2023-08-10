@@ -8,8 +8,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SearchIcon from "@mui/icons-material/Search";
 
-import Alien from "../../assets/alien.jpg";
-
 const NaviBar = () => {
   const { logout, currentUser, handleSearch } = React.useContext(AuthContext);
 
@@ -19,8 +17,8 @@ const NaviBar = () => {
         <div className={currentUser ? "navi-container-logged-in" : ""}>
           {currentUser && (
             <ListItem className="linksContainer-logged-in">
-              <img src={Alien} className="logo" />
-              <TextField label="Search Feed" />
+              <Link to="/" className="logo"><h2>BS</h2></Link>
+              <TextField label="Search the BS Feed" />
               <SearchIcon className="search-icon" onClick={handleSearch} />
             </ListItem>
           )}

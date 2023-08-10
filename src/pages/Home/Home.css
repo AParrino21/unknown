@@ -1,0 +1,18 @@
+.home-header {
+  width: 80%;
+  max-width: 700px;
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+
+.home-header > h4 {
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  padding: 10px;
+  font-weight: 300;
+}
+
+.bs {
+  font-weight: 600;
+  color: rgb(61, 0, 173);
+}

@@ -35,6 +35,14 @@ export const AuthProvider = ({ children }: childrenProps) => {
     console.log("searching");
   }
 
+  function formatDate(date: Date) {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  }
+
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -54,6 +62,7 @@ export const AuthProvider = ({ children }: childrenProps) => {
         openAlert,
         setOpenAlert,
         handleSearch,
+        formatDate,
       }}
     >
       {children}

@@ -31,7 +31,13 @@
   color: black;
 }
 .logo {
-  width: 30px;
+  text-decoration: none;
+  color: rgb(61, 0, 173);
+}
+.logo > h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: rgb(61, 0, 173);
 }
 .search-icon {
   font-size: 30px !important;
