@@ -21,7 +21,7 @@ const PostFeed: React.FC<PostFeedProps> = ({ postData }) => {
         <div key={post.id} className="post-feed-root">
           <Box sx={{ maxWidth: 575 }}>
             <Card sx={{ minHeight: 325 }}>
-              <CardContent>
+              <CardContent className="post-feed-content">
                 <Typography
                   sx={{ fontSize: 10 }}
                   color="text.secondary"
