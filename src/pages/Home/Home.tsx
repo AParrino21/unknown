@@ -2,12 +2,14 @@ import React from "react";
 import "./Home.css";
 
 import { AuthContext } from "../../contexts/AuthContext";
-import SightingPost from "../../components/SightingPost/SightingPost";
 import { Button } from "@mui/material";
 import { auth } from "../../firebase";
 
+import SightingPost from "../../components/SightingPost/SightingPost";
+import PostFeed from "../../components/PostFeed/PostFeed";
+
 const Home = () => {
-  const { currentUser, formatDate } = React.useContext(AuthContext);
+  const { currentUser, formatDate, postData } = React.useContext(AuthContext);
 
   return (
     <div>
@@ -32,6 +34,9 @@ const Home = () => {
           formatDate={formatDate}
         />
       )}
+      <div>
+        <PostFeed postData={postData} />
+      </div>
     </div>
   );
 };

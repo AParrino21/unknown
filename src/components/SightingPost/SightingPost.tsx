@@ -3,20 +3,20 @@ import "./SightingPost.css";
 
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import { SightingPostProps } from "../../types";
+import { SightingPostProps, PostData } from "../../types";
+import { v4 as uuidv4 } from 'uuid';
 
 const SightingPost: React.FC<SightingPostProps> = ({
   currentUser,
   formatDate,
 }) => {
-  const [post, setPost] = React.useState<{
-    postData: string;
-    author: string | null | undefined;
-    date: string;
-  }>({
+  const [post, setPost] = React.useState<PostData>({
+    id: uuidv4(),
     postData: "",
     author: currentUser,
     date: formatDate(new Date()),
+    reactions: {bs: 0, real: 0},
+    comments: []
   });
 
   function handlePostChange(

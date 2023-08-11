@@ -1,0 +1,41 @@
+.post-feed-root {
+  width: fit-content;
+  margin: 50px auto;
+}
+
+.post-feed-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.thumb-wrapper {
+    margin-bottom: 1.5px;
+    font-size: 13px;
+    color: rgb(175, 175, 175);
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.thumb-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.thumb-icon {
+  font-size: 15px !important;
+}
+
+.real {
+    color: green;
+}
+
+.bull {
+    color: rgb(152, 0, 0)
+}
+
+.post-feed-root > div > div > .css-46bh2p-MuiCardContent-root {
+    margin-bottom: 80px;
+}

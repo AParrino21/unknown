@@ -2,7 +2,9 @@ import React from "react";
 import { auth } from "../firebase";
 import axios from "axios";
 
-import { AuthProviderProps, childrenProps } from "../types";
+import { dummyData } from "../../dummyData";
+
+import { AuthProviderProps, PostData, childrenProps } from "../types";
 
 export const AuthContext = React.createContext({} as AuthProviderProps);
 
@@ -11,8 +13,13 @@ export const AuthProvider = ({ children }: childrenProps) => {
   const [alertMessage, setAlertMessage] = React.useState<string>("");
   const [alertStatus, setAlertStatus] = React.useState<string>("");
   const [openAlert, setOpenAlert] = React.useState<boolean>(false);
+  const [postData, setPostData] = React.useState<PostData[]>([]);
 
   //   const URL = import.meta.env.VITE_APP_SERVER_URL;
+
+  function getPostData() {
+    setPostData(dummyData);
+  }
 
   function setAlert(aStatus: string, aMessage: string) {
     setOpenAlert(true);
@@ -40,10 +47,15 @@ export const AuthProvider = ({ children }: childrenProps) => {
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
 
-    return `${day}/${month}/${year}`;
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+
+    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
   }
 
   React.useEffect(() => {
+    getPostData();
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
     });
@@ -63,6 +75,7 @@ export const AuthProvider = ({ children }: childrenProps) => {
         setOpenAlert,
         handleSearch,
         formatDate,
+        postData,
       }}
     >
       {children}
