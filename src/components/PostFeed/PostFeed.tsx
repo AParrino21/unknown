@@ -42,7 +42,6 @@ const PostFeed: React.FC<PostFeedProps> = ({ postData }) => {
                     {post.reactions.bs}{" "}
                   </p>
                 </div>
-                {/* </Typography> */}
                 <br />
                 <Typography textAlign="center" variant="body2">
                   {post.postData}
