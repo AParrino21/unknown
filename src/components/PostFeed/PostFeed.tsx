@@ -7,13 +7,12 @@ import {
   Card,
   CardActions,
   CardContent,
-  TextField,
   Typography,
 } from "@mui/material";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 
-const PostFeed: React.FC<PostFeedProps> = ({ postData }) => {
+const PostFeed: React.FC<PostFeedProps> = ({ postData, handleCommentView }) => {
   console.log(postData);
   return (
     <div>
@@ -54,7 +53,7 @@ const PostFeed: React.FC<PostFeedProps> = ({ postData }) => {
                   </Button>
                 </CardActions>
                 <CardActions>
-                  <Button size="small">View Comments</Button>
+                  <Button id={post.id} onClick={(e) => handleCommentView(e)} size="small">View Comments</Button>
                 </CardActions>
                 <CardActions>
                   <Button color="error" size="small">

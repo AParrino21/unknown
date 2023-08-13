@@ -22,6 +22,7 @@ export interface PostData {
   reactions: { bs: number; real: number };
   comments: {
     id: string;
+    commentAuthor: string;
     commentData: string;
     commentDate: string;
     commentReactions: number;
@@ -30,6 +31,7 @@ export interface PostData {
 
 export interface PostFeedProps {
   postData: PostData[];
+  handleCommentView: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export interface AuthProviderProps {
@@ -44,4 +46,10 @@ export interface AuthProviderProps {
   handleSearch: () => void;
   formatDate: (d: Date) => string;
   postData: PostData[];
+}
+
+export interface CommentModalProps {
+  open: boolean;
+  handleClose: (open: boolean) => void;
+  clickedPostComments: PostData[];
 }

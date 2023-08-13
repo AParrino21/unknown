@@ -1,0 +1,17 @@
+.comment-card {
+    padding: 30px;
+    margin: 10px 10px 30px 10px
+}
+
+.comment-card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.comment-heart {
+    cursor: pointer;
+    color: red !important;
+    width: 14px !important;
+}

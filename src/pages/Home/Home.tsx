@@ -7,9 +7,26 @@ import { auth } from "../../firebase";
 
 import SightingPost from "../../components/SightingPost/SightingPost";
 import PostFeed from "../../components/PostFeed/PostFeed";
+import CommentModal from "../../components/CommentModal/CommentModal";
+import { PostData } from "../../types";
 
 const Home = () => {
   const { currentUser, formatDate, postData } = React.useContext(AuthContext);
+
+  const [openModal, setOpenModal] = React.useState<boolean>(false);
+  const [clickedPostComments, setClickedPostComments] = React.useState<
+    PostData[]
+  >([]);
+
+  function handleCommentModalClose() {
+    setOpenModal(false);
+  }
+
+  function handleCommentView(e: React.MouseEvent<HTMLButtonElement>) {
+    let commentList = postData.filter((post) => post.id === e.currentTarget.id);
+    setClickedPostComments(commentList);
+    setOpenModal(true);
+  }
 
   return (
     <div>
@@ -35,7 +52,14 @@ const Home = () => {
         />
       )}
       <div>
-        <PostFeed postData={postData} />
+        <PostFeed postData={postData} handleCommentView={handleCommentView} />
+      </div>
+      <div>
+        <CommentModal
+          open={openModal}
+          handleClose={handleCommentModalClose}
+          clickedPostComments={clickedPostComments}
+        />
       </div>
     </div>
   );
