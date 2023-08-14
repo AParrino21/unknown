@@ -50,6 +50,6 @@ export interface AuthProviderProps {
 
 export interface CommentModalProps {
   open: boolean;
-  handleClose: (open: boolean) => void;
+  handleClose: () => void;
   clickedPostComments: PostData[];
 }

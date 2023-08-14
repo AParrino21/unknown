@@ -1,21 +1,10 @@
 import React from "react";
 import "./CommentModal.css";
-import { Box, Card, Divider, Modal, Typography } from "@mui/material";
+import { Box, Button, Card, Divider, Modal, Typography } from "@mui/material";
 import { CommentModalProps } from "../../types";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid light-gray",
-  boxShadow: 24,
-  p: 4,
-  borderRadius: "8px",
-};
+const style = {};
 
 const CommentModal: React.FC<CommentModalProps> = ({
   open,
@@ -33,12 +22,13 @@ const CommentModal: React.FC<CommentModalProps> = ({
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        className="comment-modal-root"
       >
-        <Box sx={style}>
+        <Box className="comment-box-container">
           <div className="comment-card-info">
             <h5>Comments for {clickedPostComments[0]?.author}'s post</h5>
             <Typography
-              sx={{ fontSize: 10 }}
+              sx={{ fontSize: 10, margin: "0" }}
               color="text.secondary"
               gutterBottom
             >
@@ -90,6 +80,9 @@ const CommentModal: React.FC<CommentModalProps> = ({
               </div>
             </Card>
           ))}
+          <div className="close-comment-modal-btn">
+            <Button onClick={() => handleClose()}>CLOSE</Button>
+          </div>
         </Box>
       </Modal>
     </div>

@@ -1,3 +1,27 @@
+.comment-modal-root {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.comment-box-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: 90%;
+    background-color: white;
+    border: 2px solid gray;
+    box-shadow: 24;
+    padding: 4%;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-height: 700px;
+    max-height: 700px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .comment-card {
     padding: 30px;
     margin: 10px 10px 30px 10px
@@ -5,7 +29,7 @@
 
 .comment-card-info {
     display: flex;
-    align-items: center;
+    align-items: center !important;
     justify-content: space-between;
     padding: 10px;
 }
@@ -14,4 +38,15 @@
     cursor: pointer;
     color: red !important;
     width: 14px !important;
+}
+
+.close-comment-modal-btn {
+    position: sticky;
+    bottom: -12px;
+    background-color: white;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
 }

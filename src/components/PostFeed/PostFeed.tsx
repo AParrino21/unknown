@@ -18,7 +18,7 @@ const PostFeed: React.FC<PostFeedProps> = ({ postData, handleCommentView }) => {
     <div>
       {postData?.map((post) => (
         <div key={post.id} className="post-feed-root">
-          <Box sx={{ maxWidth: 575 }}>
+          <Box sx={{ maxWidth: 575, width: "90%", margin: "0 auto" }}>
             <Card sx={{ minHeight: 325 }}>
               <CardContent className="post-feed-content">
                 <Typography
