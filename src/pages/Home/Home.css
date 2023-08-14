@@ -16,3 +16,10 @@
   font-weight: 600;
   color: rgb(61, 0, 173);
 }
+
+@media screen and (min-width: 1200px) {
+  .home-header > h4 {
+    font-size: 25px !important;
+    padding-bottom: 50px;
+  }
+}

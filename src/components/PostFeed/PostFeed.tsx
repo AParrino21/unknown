@@ -18,7 +18,7 @@ const PostFeed: React.FC<PostFeedProps> = ({ postData, handleCommentView }) => {
     <div>
       {postData?.map((post) => (
         <div key={post.id} className="post-feed-root">
-          <Box sx={{ maxWidth: 575, width: "90%", margin: "0 auto" }}>
+          <Box sx={{ maxWidth: 800, width: "90%", margin: "0 auto" }}>
             <Card sx={{ minHeight: 325 }}>
               <CardContent className="post-feed-content">
                 <Typography
@@ -28,7 +28,7 @@ const PostFeed: React.FC<PostFeedProps> = ({ postData, handleCommentView }) => {
                 >
                   {post.date}
                 </Typography>
-                <Typography variant="h5" component="div">
+                <Typography className="post-author" variant="h5" component="div">
                   {post.author}
                 </Typography>
                 <div className="thumb-wrapper">
@@ -42,7 +42,7 @@ const PostFeed: React.FC<PostFeedProps> = ({ postData, handleCommentView }) => {
                   </p>
                 </div>
                 <br />
-                <Typography textAlign="center" variant="body2">
+                <Typography className="post-data" textAlign="center" variant="body2">
                   {post.postData}
                 </Typography>
               </CardContent>

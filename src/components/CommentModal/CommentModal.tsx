@@ -44,6 +44,7 @@ const CommentModal: React.FC<CommentModalProps> = ({
                 variant="h6"
                 component="div"
                 sx={{ mt: 2, fontSize: "16px" }}
+                className="comment-data"
               >
                 {comment.commentData}
               </Typography>
@@ -55,6 +56,7 @@ const CommentModal: React.FC<CommentModalProps> = ({
                     fontSize: "12px",
                     display: "flex",
                     alignItems: "center",
+                    padding: "0 5px"
                   }}
                 >
                   <FavoriteBorderIcon
@@ -66,14 +68,14 @@ const CommentModal: React.FC<CommentModalProps> = ({
                 </Typography>
                 <Typography
                   id="modal-modal-description"
-                  sx={{ mt: 2, fontSize: "12px" }}
+                  sx={{ mt: 2, fontSize: "12px", padding: "0 5px" }}
                 >
                   {comment.commentAuthor}
                 </Typography>
                 <Typography
                   id="modal-modal-description"
                   color="text.secondary"
-                  sx={{ mt: 2, fontSize: "12px" }}
+                  sx={{ mt: 2, fontSize: "12px", padding: "0 5px" }}
                 >
                   {comment.commentDate}
                 </Typography>

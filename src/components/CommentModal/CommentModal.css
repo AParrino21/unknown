@@ -16,7 +16,7 @@
     padding: 4%;
     border-radius: 8px;
     margin: 0 auto;
-    max-height: 700px;
+    max-height: 600px !important;
     max-height: 700px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -27,11 +27,16 @@
     margin: 10px 10px 30px 10px
 }
 
+.comment-data {
+    text-align: center;
+}
+
 .comment-card-info {
     display: flex;
     align-items: center !important;
     justify-content: space-between;
     padding: 10px;
+    font-family: "Quicksand", sans-serif !important;
 }
 
 .comment-heart {
@@ -49,4 +54,11 @@
     text-align: center;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
+}
+
+@media screen and (max-width: 450px) {
+    .comment-card-info {
+        text-align: center !important;
+        
+    }
 }

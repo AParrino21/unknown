@@ -42,7 +42,7 @@ const SightingPost: React.FC<SightingPostProps> = ({
         id="outlined-multiline-static"
         label="Reveal Your Story"
         multiline
-        rows={7}
+        rows={8}
         fullWidth
         name="postData"
         onChange={(e) => handlePostChange(e)}
