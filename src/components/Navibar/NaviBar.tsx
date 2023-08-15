@@ -25,6 +25,13 @@ const NaviBar = () => {
             </ListItem>
           )}
           <div className="logged-out-flex">
+            {currentUser && (
+              <ListItem className="linksContainer-logged-in-logo">
+                <Link to="/" className="logo">
+                  <h2>BS</h2>
+                </Link>
+              </ListItem>
+            )}
             {!currentUser && (
               <ListItem className="linksContainer-logged-in">
                 <Link to="/" className="logo">
@@ -61,6 +68,12 @@ const NaviBar = () => {
             </List>
           </div>
         </div>
+        {currentUser && (
+          <ListItem className="linksContainer-logged-in-mobile">
+            <TextField className="linksContainer-logged-in-mobile-searchbar" fullWidth label="Search the BS Feed" />
+            <SearchIcon className="search-icon" onClick={handleSearch} />
+          </ListItem>
+        )}
       </div>
       <Divider />
       <br />

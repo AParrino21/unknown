@@ -40,11 +40,39 @@
   color: rgb(61, 0, 173);
 }
 .logo > h2 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   color: rgb(61, 0, 173);
 }
 .search-icon {
   font-size: 30px !important;
   cursor: pointer;
+}
+
+.linksContainer-logged-in-mobile {
+  display: none !important;
+}
+
+.linksContainer-logged-in-logo {
+  display: none !important;
+}
+
+@media screen and (max-width: 480px) {
+  .linksContainer-logged-in {
+    display: none !important;
+  }
+  .linksContainer-logged-in-logo {
+    display: block !important;
+  }
+  .linksContainer-logged-in-mobile {
+    display: flex !important;
+    align-items: center;
+    gap: 15px;
+  }
+  .linksContainer-logged-in-mobile-searchbar {
+    background-color: white;
+  }
+  .navi-container-logged-in {
+    display: block !important;
+  }
 }
