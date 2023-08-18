@@ -12,8 +12,30 @@ import {
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 
-const PostFeed: React.FC<PostFeedProps> = ({ postData, handleCommentView }) => {
-  console.log(postData);
+const PostFeed: React.FC<PostFeedProps> = ({
+  postData,
+  handleCommentView,
+  handleCommentAdd,
+}) => {
+  function handleRealClick(
+    e: React.MouseEvent<SVGElement | HTMLButtonElement>,
+    btnTitle: string
+  ) {
+    console.log(btnTitle, e.currentTarget.id);
+  }
+
+  function handleBSClick(
+    e: React.MouseEvent<SVGElement | HTMLButtonElement>,
+    btnTitle: string
+  ) {
+    if (btnTitle === "real") {
+      console.log("real", e.currentTarget.id);
+    }
+    if (btnTitle === "bs") {
+      console.log("bs", e.currentTarget.id);
+    }
+  }
+
   return (
     <div>
       {postData?.map((post) => (
@@ -28,37 +50,84 @@ const PostFeed: React.FC<PostFeedProps> = ({ postData, handleCommentView }) => {
                 >
                   {post.date}
                 </Typography>
-                <Typography className="post-author" variant="h5" component="div">
+                <Typography
+                  className="post-author"
+                  variant="h5"
+                  component="div"
+                >
                   {post.author}
                 </Typography>
                 <div className="thumb-wrapper">
                   <p className="thumb-container">
-                    <ThumbUpOffAltIcon className="thumb-icon real" />{" "}
+                    <ThumbUpOffAltIcon
+                      id={post.id}
+                      className="thumb-icon real"
+                      onClick={(e) => handleRealClick(e, "real")}
+                    />{" "}
                     {post.reactions.real}
                   </p>
                   <p className="thumb-container">
-                    <ThumbDownOffAltIcon className="thumb-icon bull" />{" "}
+                    <ThumbDownOffAltIcon
+                      id={post.id}
+                      className="thumb-icon bull"
+                      onClick={(e) => handleBSClick(e, "bs")}
+                    />{" "}
                     {post.reactions.bs}{" "}
                   </p>
                 </div>
                 <br />
-                <Typography className="post-data" textAlign="center" variant="body2">
+                <br />
+                <br />
+                <Typography
+                  className="post-data"
+                  textAlign="center"
+                  variant="body2"
+                >
                   {post.postData}
                 </Typography>
               </CardContent>
               <div className="post-feed-actions">
                 <CardActions>
-                  <Button color="success" size="small">
+                  <ThumbUpOffAltIcon className="thumb-icon real" />
+                  <Button
+                    id={post.id}
+                    onClick={(e) => handleRealClick(e, "real")}
+                    color="success"
+                    size="small"
+                  >
                     Real
                   </Button>
                 </CardActions>
                 <CardActions>
-                  <Button id={post.id} onClick={(e) => handleCommentView(e)} size="small">View Comments</Button>
+                  <div className="comment-btns">
+                    <Button
+                      id={post.id}
+                      onClick={(e) => handleCommentAdd(e)}
+                      size="small"
+                    >
+                      Add Comment
+                    </Button>
+                    <br />
+                    <br />
+                    <Button
+                      id={post.id}
+                      onClick={(e) => handleCommentView(e)}
+                      size="small"
+                    >
+                      View Comments
+                    </Button>
+                  </div>
                 </CardActions>
                 <CardActions>
-                  <Button color="error" size="small">
+                  <Button
+                    id={post.id}
+                    onClick={(e) => handleBSClick(e, "bs")}
+                    color="error"
+                    size="small"
+                  >
                     Call BS
                   </Button>
+                  <ThumbDownOffAltIcon className="thumb-icon bull" />
                 </CardActions>
               </div>
             </Card>

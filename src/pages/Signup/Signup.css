@@ -1,22 +1,25 @@
-.login-container {
+.signup-container {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
   font-family: "Quicksand", sans-serif;
 }
-.buttonContainer {
+.sigupButtonContainer {
   display: flex !important;
   align-items: center !important;
-  flex-direction: column;
   justify-content: center !important;
   gap: 10px !important;
   margin-top: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
-.loginPropeties {
+.signupPropeties {
   margin-bottom: 20px !important;
   width: 80% !important;
   max-width: 300px !important;
   text-align: center;
+}
+.signup-agreement {
+  font-size: 10px;
+  margin-bottom: 20px;
 }

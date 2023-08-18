@@ -29,14 +29,24 @@ export interface PostData {
   }[];
 }
 
+export interface CommentData {
+  id: string;
+  commentAuthor: string | undefined | null;
+  commentData: string;
+  commentDate: string;
+  commentReactions: number;
+}
+
 export interface PostFeedProps {
   postData: PostData[];
   handleCommentView: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleCommentAdd: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export interface AuthProviderProps {
   currentUser: boolean;
   login: (email: string, password: string) => void;
+  signup: (email: string, password: string) => void;
   logout: () => void;
   alertMessage: string;
   alertStatus: string;
@@ -52,4 +62,15 @@ export interface CommentModalProps {
   open: boolean;
   handleClose: () => void;
   clickedPostComments: PostData[];
+}
+
+export interface AddCommentProps {
+  open: boolean;
+  handleClose: () => void;
+  postId: string;
+  handleCommentChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  comment: CommentData;
+  handleCreateComment: () => void;
 }

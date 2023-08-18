@@ -38,6 +38,10 @@
   font-size: 15px !important;
 }
 
+.comment-btns {
+  text-align: center;
+}
+
 .real {
     color: green;
 }

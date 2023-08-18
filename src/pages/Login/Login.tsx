@@ -19,12 +19,14 @@ const Login = () => {
   }, [currentUser]);
 
   const handleLogin = () => {
-    console.log(emailRef.current!.value, passwordRef.current!.value)
+    console.log(emailRef.current!.value, passwordRef.current!.value);
     login(emailRef.current!.value, passwordRef.current!.value);
   };
 
   return (
     <div>
+      <br />
+      <br />
       <Container className="login-container">
         <h1 className="loginPropeties">Login</h1>
         <br />
@@ -45,6 +47,8 @@ const Login = () => {
           <Button onClick={handleLogin} color="primary" variant="contained">
             Login
           </Button>
+          <p>OR</p>
+          <Button onClick={() => navigate("/signup")}>SIGN UP HERE</Button>
         </div>
       </Container>
     </div>

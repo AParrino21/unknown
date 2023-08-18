@@ -34,6 +34,14 @@ export const AuthProvider = ({ children }: childrenProps) => {
     });
   }
 
+  function signup(email: string, password: string) {
+    return auth
+      .createUserWithEmailAndPassword(email, password)
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   function logout() {
     return auth.signOut();
   }
@@ -51,7 +59,7 @@ export const AuthProvider = ({ children }: childrenProps) => {
     const minutes = String(date.getMinutes()).padStart(2, "0");
     const seconds = String(date.getSeconds()).padStart(2, "0");
 
-    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+    return `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
   }
 
   React.useEffect(() => {
@@ -67,6 +75,7 @@ export const AuthProvider = ({ children }: childrenProps) => {
       value={{
         currentUser,
         login,
+        signup,
         logout,
         alertMessage,
         alertStatus,
