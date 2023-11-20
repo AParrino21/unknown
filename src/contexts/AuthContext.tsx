@@ -62,7 +62,16 @@ export const AuthProvider = ({ children }: childrenProps) => {
     return `${month}/${day}/${year} ${hours}:${minutes}:${seconds}`;
   }
 
+  async function getDynamoUsers() {
+    const response = await axios.get(
+      "https://t23oelsfal.execute-api.us-east-1.amazonaws.com/user"
+    );
+
+    console.log(response);
+  }
+
   React.useEffect(() => {
+    // getDynamoUsers()
     getPostData();
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);

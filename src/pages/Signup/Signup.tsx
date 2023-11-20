@@ -8,6 +8,8 @@ const Signup = () => {
   const navigate = useNavigate();
   const { signup, currentUser } = React.useContext(AuthContext);
 
+  const firstNameRef = React.useRef<HTMLInputElement>(null);
+  const lastNameRef = React.useRef<HTMLInputElement>(null);
   const usernameRef = React.useRef<HTMLInputElement>(null);
   const emailRef = React.useRef<HTMLInputElement>(null);
   const passwordRef = React.useRef<HTMLInputElement>(null);
@@ -21,11 +23,15 @@ const Signup = () => {
 
   const handleSignup = () => {
     console.log(
+      firstNameRef.current!.value,
+      lastNameRef.current!.value,
       usernameRef.current!.value,
       emailRef.current!.value,
       passwordRef.current!.value
     );
     if (
+      firstNameRef.current!.value,
+      lastNameRef.current!.value,
       emailRef.current!.value &&
       passwordRef.current!.value &&
       passwordRef.current!.value === comfirmPasswordRef.current!.value
@@ -39,6 +45,18 @@ const Signup = () => {
       <br />
       <Container className="signup-container">
         <h1 className="loginPropeties">Sign Up</h1>
+        <br />
+        <TextField
+          className="signupPropeties"
+          inputRef={firstNameRef}
+          label="First Name"
+        ></TextField>
+        <br />
+        <TextField
+          className="signupPropeties"
+          inputRef={lastNameRef}
+          label="Last Name"
+        ></TextField>
         <br />
         <TextField
           className="signupPropeties"

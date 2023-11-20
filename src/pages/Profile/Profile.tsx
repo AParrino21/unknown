@@ -10,7 +10,7 @@ const Profile = () => {
   if (!currentUser) return <Navigate to="/login" replace />;
   return (
     <div>
-      <p>Dashboard</p>
+      <p>Profile</p>
     </div>
   );
 };
